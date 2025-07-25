@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pibd31_egorov_pmu/presentation/home_page/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatefulWidget {
+/*class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
   final String title;
@@ -158,4 +159,4 @@ class _MyCardWidget extends StatelessWidget {
       ),
     );
   }
-}
+}*/
