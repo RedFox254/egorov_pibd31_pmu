@@ -36,7 +36,7 @@ class _MyCardWidgetState extends State<_MyCardWidget> {
         margin: const EdgeInsets.only(top: 10),
         constraints: const BoxConstraints(minHeight: 140),
         decoration: BoxDecoration(
-            color: Colors.lightBlue,
+            color: Colors.limeAccent,
             borderRadius: BorderRadius.circular(20),
             border: Border.all(
               color: Colors.black,
