@@ -10,4 +10,3 @@ class CardData {
         this.image,
       });
 }
-

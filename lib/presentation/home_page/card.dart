@@ -4,15 +4,16 @@ typedef OnLikeCallback = void Function(bool isLiked)?;
 class _MyCardWidget extends StatefulWidget {
   final String text;
   final String description;
-  final String? image;
+  final String? v;
   final OnLikeCallback onLike;
   final VoidCallback? onTap;
+  final dynamic image;
   const _MyCardWidget(
       this.text, {
         required this.description,
         this.image,
         this.onLike,
-        this.onTap,
+        this.onTap, this.v,
       });
   factory _MyCardWidget.formData(CardData data, {OnLikeCallback onLike, VoidCallback? onTap,}) => _MyCardWidget(
     data.text,
@@ -45,7 +46,7 @@ class _MyCardWidgetState extends State<_MyCardWidget> {
         ),
         child: IntrinsicHeight(
           child: Row(
-            //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ClipRRect(
