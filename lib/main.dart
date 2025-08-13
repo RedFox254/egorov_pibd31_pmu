@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pibd31_egorov_pmu/data/repositories/film_repository.dart';
+import 'package:pibd31_egorov_pmu/presentation/home_page/bloc/bloc.dart';
 import 'package:pibd31_egorov_pmu/presentation/home_page/home_page.dart';
 
 void main() {
@@ -13,9 +16,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-          primarySwatch: Colors.teal
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
+      useMaterial3: true,
+      ), //
+      home: RepositoryProvider<FilmRepository>(
+        lazy: true,
+        create: (_) => FilmRepository(),
+        child: BlocProvider<HomeBloc>(
+          lazy: false,
+          create: (context) => HomeBloc(context.read<FilmRepository>()),
+          child: const MyHomePage(title: 'Егоров Максим Александрович'),
+        ),
       ),
-      home: const MyHomePage(title: 'Егоров Максим Александрович'),
     );
   }
 }
