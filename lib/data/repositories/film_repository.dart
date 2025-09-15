@@ -26,7 +26,7 @@ class FilmRepository extends ApiInterface {
     OnErrorCallback? onError,
   }) async {
     try {
-      const String url = '$_baseUrl/v1.4/movie?year=2023';
+      const String url = '$_baseUrl/v1.4/movie';
 
       /*final Map<String, dynamic> queryParams = {
         if (q != null) 'filter[name_cont]': q,
